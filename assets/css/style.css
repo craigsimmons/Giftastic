@@ -1,17 +1,24 @@
 body {
-    background-color: #dddddd;
-    font-family: 'Baloo', cursive;
+    background-color: #888888;
+}
 
+.jumbofmt {
+    background-color: #e6ccb3;
+    font-family: 'Baloo', cursive;
 }
 
 .custombtn {
-    background-color: #005500; /* Green */
+    background-color: #000066;
+    /* Dark Blue */
+    color: white;
     border: none;
-    color: yellow;
     padding: 15px 30px;
     margin: 5px;
     text-align: center;
     display: inline-block;
-    font-size: 16px;
+    font-size: 18px;
+}
 
+.title {
+    font-size: 40px;
 }
