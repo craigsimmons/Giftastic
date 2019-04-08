@@ -22,3 +22,18 @@ body {
 .title {
     font-size: 40px;
 }
+
+.imgdisplay {
+ display: inline-block;
+ align-content: center;
+}
+
+img {
+    margin:20px;
+
+}
+.ratingdisplay {
+    font-size: 18px;
+    color: red;
+    text-align: center;
+}
