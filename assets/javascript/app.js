@@ -4,7 +4,6 @@ $(document).ready(function() {
     var limitStr = 10;
     var ratingStr = "G";
     var topicsArr = ['dog', 'cat', 'fuck', 'bat', 'wolf'];
-    var topicStr = "";
 
     /* Event Handlers and functions to run immediately */
     makeButtons();
@@ -16,18 +15,32 @@ $(document).ready(function() {
             return false;
         }
         topicsArr.push(answer);
-        console.log(answer);
         newButton(answer);
-        console.log(topicsArr);
     });
 
     $(document).on("click", ".submitable", function(event) {
         event.preventDefault();
         var answer = $(this).attr("data");
-        console.log(answer);
         buildAPIQuery(answer);
     });
 
+    //$(document).on("click", ".image", function() 
+    
+
+    $("img").click( function(event) { 
+        var state = $(this).attr('data-state');
+        if (state === 'still') {
+            $(this).attr('src', $(this).data('animate'));
+            $(this).attr('data-state', 'animate');
+            console.log("animate");
+        }
+        else {
+            $(this).attr('src', $(this).data('still'));
+            $(this).attr('data-state', 'still');
+            console.log("still");
+        }
+    });
+    
 /* functions   */
 
     function makeButtons() {
@@ -47,6 +60,16 @@ $(document).ready(function() {
         giphyButton.attr("data", topicStr);
         giphyButton.text(topicStr);
         $("#buttons-here").append(giphyButton);
+        buildAPIQuery(topicStr);
+
+    }
+
+    function removeButton() {
+	    $("removeBtn").on("click", function() {
+		    topicsArr.pop();
+		    displayGifButtons();
+		    return false;
+        });
     }
 
     function buildAPIQuery(topicStr) {
@@ -65,30 +88,27 @@ $(document).ready(function() {
             })
             .then(function(response) {
                 var result = response.data;
-                console.log(result);
                 if (result === "") {
-                    console.log("nada");
                     return false;  
                 }
                 else {
-                console.log("oh yeah, theres 10 objects");
-                generateGIFs(result);
+                    generateGIFs(result);
                 }
             });
     }
 
     function generateGIFs(result) {
-        $("#gifsView").empty();
+        $("#gifs-here").empty();
         for (var i = 0; i<result.length; i++){
             var gifImage = $("<img>");
-            var gifDiv = $("<div>");
-            var gifRating = $("<p>").text("Rating " + result[i].rating);
+            var gifDiv = $("<div>");       
+            var gifRating = $("<p>").text("Rating " + (result[i].rating).toUpperCase());
             gifDiv.addClass("imgdisplay");
             gifRating.addClass("ratingdisplay");
+            gifImage.attr("data-state", "still");
 			gifImage.attr("src", result[i].images.fixed_height_small_still.url);
 			gifImage.attr("data-still", result[i].images.fixed_height_small_still.url);
 			gifImage.attr("data-animate", result[i].images.fixed_height_small.url);
-			gifImage.attr("data-state", "still");
 			gifImage.addClass("image");
             gifDiv.append(gifImage);
             gifDiv.append(gifRating);
