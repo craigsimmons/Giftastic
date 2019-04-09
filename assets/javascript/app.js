@@ -19,7 +19,7 @@ $(document).ready(function() {
         newButton(answer);
     });
 
-    // event handler for topic buttons/ all WORKING
+    // event handler for topic buttons. when pressed, sends api request/ all WORKING
     $(document).on("click", ".submitable", function(event) {
         event.preventDefault();
         var answer = $(this).attr("data");
@@ -28,15 +28,20 @@ $(document).ready(function() {
 
     // neither works below
     // $(document).on("click", "#gifs-here", newButton("chicken"));
-    //  $(document).on("click", "#buttons-here", newButton("rooster"));
-
-    // Below is working. need to fix logic
+    /*  $(document).on("click", "#buttons-here", newButton("rooster"));
     $("#removebtn").on("click", function() {
         event.preventDefault();
         $("#buttons-here").empty();
         $("#gifs-here").empty();
     });
-
+    */
+    // Below is working. need to fix logic
+    $("#removebtn").on("click", function(name) {
+        event.preventDefault();
+        var answer = $(this).attr("data");
+        topicsArr.pop();
+        makeButtons();
+    });
 
 
     //not working
