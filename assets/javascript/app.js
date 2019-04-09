@@ -35,11 +35,12 @@ $(document).ready(function() {
         makeButtons();
     });
     // Event handler for 
-    $('body').on('click', '.image', function() {
+    $(document).on('click', '.image', function() {
         var state = $(this).attr('data-state');
+        var idAttr = $(this).attr('id');
         console.log(state);
         console.log(this);
-        var obj = this;
+        console.log(idAttr);
         imgStateToggle(state);
     });
 
@@ -110,6 +111,9 @@ $(document).ready(function() {
             gifImage.attr('src', stillImgSrc);
             gifImage.attr('data-still', stillImgSrc);
             gifImage.attr('data-animate', animateImgSrc);
+            gifImage.attr('id', result[i].id);
+            var x = result[i].id;
+            console.log(x);
             gifImage.addClass('image');
             gifDiv.append(gifImage);
             gifDiv.append(gifRating);
@@ -119,20 +123,28 @@ $(document).ready(function() {
 
     function imgStateToggle(state) {
         console.log('In the imgStateToggle');
-        // var state = $(this).attr('data-state');
+        var imgId = $('.image').attr('id');
+        console.log("before" + imgId);
+        imgId = ("#" + imgId);
+        console.log(imgId);
         console.log(state);
-        console.log(this);
         if (state === 'still') {
-            var animateImgSrc = $('.image').attr('data-animate');
+            var animateImgSrc = $(imgId).attr('data-animate');
             console.log(animateImgSrc);
-            $('.image').attr('src', animateImgSrc);
-            $('.image').attr('data-state', 'animate');
+            // $('#unique').attr('src', animateImgSrc);
+            $(imgId).attr('src', animateImgSrc);
+            $(imgId).attr('data-state', 'animate');
+            animateImgSrc = "";
+            imgId = "";
         } else {
             console.log('In the imgStateToggle - change to still');
-            var stillImgSrc = $('.image').attr('data-still');
+            var stillImgSrc = $(imgId).attr('data-still');
             console.log(stillImgSrc);
-            $('.image').attr('src', stillImgSrc);
-            $('.image').attr('data-state', 'still');
+            $(imgId).attr('src', stillImgSrc);
+            $(imgId).attr('data-state', 'still');
+            stillImgSrc = "";
+            imgId = "";
+
         }
     }
 });
