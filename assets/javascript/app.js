@@ -3,8 +3,7 @@ $(document).ready(function() {
     /* Global variable declarations */
     var limitStr = 10;
     var ratingStr = 'G';
-    var topicsArr = ['dog', 'cat', 'fuck', 'bat', 'wolf'];
-    var currentImgTopic = '';
+    var topicsArr = ['dog', 'platypus', 'snake', 'kangaroo', 'wolf'];
 
     /* Event Handlers and functions to run immediately */
 
@@ -34,17 +33,17 @@ $(document).ready(function() {
         $('#gifs-here').empty();
         makeButtons();
     });
-    // Event handler for 
+
+    // Event handler for images
     $(document).on('click', '.image', function() {
+        event.preventDefault();
         var state = $(this).attr('data-state');
         var idAttr = $(this).attr('id');
-        console.log(state);
-        console.log(this);
-        console.log(idAttr);
-        imgStateToggle(state);
+        imgStateToggle(state, idAttr);
     });
 
-    /* functions   */
+    /* Functions   */
+
     // function to make buttons from topics array to seed page / WORKING
     function makeButtons() {
         $('#buttons-here').empty();
@@ -112,8 +111,6 @@ $(document).ready(function() {
             gifImage.attr('data-still', stillImgSrc);
             gifImage.attr('data-animate', animateImgSrc);
             gifImage.attr('id', result[i].id);
-            var x = result[i].id;
-            console.log(x);
             gifImage.addClass('image');
             gifDiv.append(gifImage);
             gifDiv.append(gifRating);
@@ -121,11 +118,11 @@ $(document).ready(function() {
         }
     }
 
-    function imgStateToggle(state) {
+    function imgStateToggle(state, idAttr) {
         console.log('In the imgStateToggle');
         var imgId = $('.image').attr('id');
         console.log("before" + imgId);
-        imgId = ("#" + imgId);
+        imgId = ("#" + idAttr);
         console.log(imgId);
         console.log(state);
         if (state === 'still') {
@@ -134,6 +131,7 @@ $(document).ready(function() {
             // $('#unique').attr('src', animateImgSrc);
             $(imgId).attr('src', animateImgSrc);
             $(imgId).attr('data-state', 'animate');
+            console.log('isAnimated' + $(imgId).attr('data-state', 'animate'));
             animateImgSrc = "";
             imgId = "";
         } else {
