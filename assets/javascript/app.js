@@ -3,7 +3,7 @@ $(document).ready(function() {
     /* Global variable declarations */
     var limitStr = 10;
     var ratingStr = 'G';
-    var topicsArr = ['dog', 'platypus', 'snake', 'kangaroo', 'wolf'];
+    var topicsArr = ['science', 'platypus', 'canada', 'baseball', 'wolf'];
 
     /* Event Handlers and functions to run immediately */
 

@@ -8,6 +8,8 @@ body {
     font-family: 'Baloo', cursive;
     border-radius: 30px;
     margin-top: 25px;
+    min-width: 925px;
+    max-width: 1000px;
 }
 
 .custombtn {
@@ -32,18 +34,50 @@ body {
     display: inline-block;
 }
 
-#removebtn {
-    float: right;
-    height: 60px;
-}
-
-.removebtn {
-    float: right;
-}
-
-.labelfont {
-    font-size: 12px;
+.actionbtn {
+    background-color: #00cc00;
     color: #4D1C11;
+    border: 3px solid #4D1C11;
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.actionbtn:hover {
+    background-color: #cc9966;
+    color: #e6ccb3;
+    border: 3px solid #4D1C11;
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+#removebtn {
+    background-color: #996633;
+    color: #e6ccb3;
+    border: 3px solid #4D1C11;
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 15px;
+    display: inline-block;
+    float: right;
+}
+
+#removebtn:hover {
+    background-color: #4D1C11;
+    color: #cc9966;
+    border: 3px solid #4D1C11;
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 15px;
+    display: inline-block;
+    float: right;
 }
 
 .inputformat {
@@ -57,9 +91,15 @@ body {
     margin: 5px 15px;
 }
 
-.title {
-    font-size: 84px;
+.labelfont {
+    font-size: 12px;
     color: #4D1C11;
+}
+
+.title {
+    font-size: 120px;
+    color: #4D1C11;
+    text-align: center;
 }
 
 .form {
@@ -70,7 +110,7 @@ body {
 .imgdisplay {
     display: inline-block;
     align-content: center;
-    border: 5px solid #4D1C11;
+    border: 3px solid #4D1C11;
     margin: 10px 15px;
 }
 
@@ -91,5 +131,5 @@ body {
 
 .aligntext {
     text-align: right;
-    vertical-align:
+    vertical-align: center;
 }
