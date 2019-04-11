@@ -15,41 +15,42 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
-
-    <style>
-        * {
-            border: 1px solid blue;
-        }
-    </style>
+    <link rel="stylesheet" href="./assets/css/reset.css">
 </head>
 
 <body>
     <div class="container">
         <div class="jumbotron jumbofmt">
             <div class="row">
-                <div class="title col-lg-12">
-                    <h1 class="display-4">Image Fetcher</h1>
+
+                <div class="title col-lg-6">
+                    <h1>Gif-ify</h1>
+                    <p class="ratingdisplay">"You pick the subject, we'll bring it to life"</p>
                 </div>
 
-                <div class="col-lg-12" id="buttons-here">
-                    <p>Buttons</p>
-                </div>
-
-                <div class="col-lg-12" id="gifs-here">
-                    <p>gifs</p>
-                </div>
-
-                <div class="col-lg-12" id="form-here">
-                    <form class="form" id="submit-form">
-                        <label for="submit-topic">Enter a topic and click submit:</label>
-                        <input id="submit-text" name="submit-topic" type="text">
-                        <input id="submit-button" type="button" value="Submit" class="btn btn-primary">
-                    </form>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <form class="form" id="submit-form">
+                            <input class="inputformat" id="submit-text" name="submit-topic" placeholder="    What do YOU want to gifify?" type="text">
+                            <button id="submit-button" type="submit" value="submit" class="actionbtn btn btn-sm">Gifify It!</button>
+                        </form>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3"></div>
+                        <div class="aligntext col-lg-4">
+                            <span class="removetext">Remove topics and clear gifs:</span>
+                        </div>
+                        <div class="col-lg-5">
+                            <button id="removebtn" type="button" class=" btn btn-sm">Remove</button>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div class="col-lg-12" id="buttons-here"></div>
+            <div class="col-lg-12 imgdisplay" id="gifs-here"></div>
         </div>
+        <script src="./assets/javascript/app.js"></script>
     </div>
-    <script src="./assets/javascript/app.js"></script>
 
 </body>
 

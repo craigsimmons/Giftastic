@@ -1,24 +1,135 @@
 body {
-    background-color: #888888;
+    background-color: #4D1C11;
+    display: block;
 }
 
 .jumbofmt {
     background-color: #e6ccb3;
     font-family: 'Baloo', cursive;
+    border-radius: 30px;
+    margin-top: 25px;
+    min-width: 925px;
+    max-width: 1000px;
 }
 
 .custombtn {
-    background-color: #000066;
-    /* Dark Blue */
+    background-color: #4D1C11;
     color: white;
-    border: none;
+    border: 3px solid white;
     padding: 15px 30px;
-    margin: 5px;
-    text-align: center;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 15px;
     display: inline-block;
-    font-size: 18px;
+}
+
+.custombtn:hover {
+    background-color: #e6ccb3;
+    color: #4D1C11;
+    border: 3px solid #4D1C11;
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.actionbtn {
+    background-color: #00cc00;
+    color: #4D1C11;
+    border: 3px solid #4D1C11;
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.actionbtn:hover {
+    background-color: #cc9966;
+    color: #e6ccb3;
+    border: 3px solid #4D1C11;
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+#removebtn {
+    background-color: #996633;
+    color: #e6ccb3;
+    border: 3px solid #4D1C11;
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 15px;
+    display: inline-block;
+    float: right;
+}
+
+#removebtn:hover {
+    background-color: #4D1C11;
+    color: #cc9966;
+    border: 3px solid #4D1C11;
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 15px;
+    display: inline-block;
+    float: right;
+}
+
+.inputformat {
+    width: 250px;
+    height: 50px;
+    border: 3px solid #4D1C11;
+    color: #4D1C11;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    margin: 5px 15px;
+}
+
+.labelfont {
+    font-size: 12px;
+    color: #4D1C11;
 }
 
 .title {
-    font-size: 40px;
+    font-size: 120px;
+    color: #4D1C11;
+    text-align: center;
+}
+
+.form {
+    float: right;
+    clear: both;
+}
+
+.imgdisplay {
+    display: inline-block;
+    align-content: center;
+    border: 3px solid #4D1C11;
+    margin: 10px 15px;
+}
+
+.ratingdisplay {
+    font-size: 20px;
+    color: #4D1C11;
+    text-align: center;
+}
+
+.removetext {
+    font-size: 16px;
+    color: #4D1C11;
+    text-align: right;
+    vertical-align: center;
+    margin-top: 25px;
+    display: inline-block;
+}
+
+.aligntext {
+    text-align: right;
+    vertical-align: center;
 }
