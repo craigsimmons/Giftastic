@@ -132,17 +132,16 @@ $(document).ready(function() {
             $(imgId).attr('src', animateImgSrc);
             $(imgId).attr('data-state', 'animate');
             console.log('isAnimated' + $(imgId).attr('data-state', 'animate'));
-            animateImgSrc = "";
-            imgId = "";
+            animateImgSrc = '';
+            imgId = '';
         } else {
             console.log('In the imgStateToggle - change to still');
             var stillImgSrc = $(imgId).attr('data-still');
             console.log(stillImgSrc);
             $(imgId).attr('src', stillImgSrc);
             $(imgId).attr('data-state', 'still');
-            stillImgSrc = "";
-            imgId = "";
-
+            stillImgSrc = '';
+            imgId = '';
         }
     }
 });
